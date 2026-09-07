@@ -1,43 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Kiosk AI Interface</title>
+    <title>The Smart Kiosk | Lazar Mladenovic</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #ffffff; overflow-x: hidden; }
+        
+        .glass {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
-<body class="bg-gray-900 text-white font-sans h-screen flex flex-col justify-between p-6">
-    <div class="flex justify-between items-center mb-8">
-        <div class="text-sm font-bold tracking-widest text-red-500">10:24 AM</div>
-        <div class="text-xs bg-green-500 px-2 py-1 rounded-full text-black font-semibold">Free WiFi Active</div>
+<body class="antialiased">
+
+    <!-- Fixed Watermark -->
+    <div class="fixed top-6 left-6 z-50 text-xs font-semibold tracking-widest text-gray-400 uppercase">
+        © 2026 Lazar Mladenovic
     </div>
 
-    <div class="flex flex-col items-center text-center space-y-4">
-        <img src="https://ui-avatars.com/api/?name=AI&background=random&color=fff&rounded=true&size=128" alt="AI Avatar" class="w-24 h-24 rounded-full shadow-lg border-4 border-red-600">
-        <h1 class="text-3xl font-bold">Hello</h1>
-        <p class="text-gray-400">How can I help you today?</p>
-    </div>
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="concept1.jpg" alt="Smart Kiosk Exterior" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#050505]"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 reveal active">
+            <h2 class="text-red-600 font-semibold tracking-widest uppercase mb-4">A Brighter Tomorrow</h2>
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tight">The Smart <br>Kiosk.</h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10 font-light">
+                Heritage meets innovation. Modernising London's iconic silhouette for the smart city era.
+            </p>
+            <a href="#features" class="inline-block bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition-colors">
+                Explore the Concept
+            </a>
+        </div>
+    </header>
 
-    <div class="flex flex-col space-y-3 mt-8 w-full max-w-sm mx-auto">
-        <button class="bg-gray-800 hover:bg-gray-700 p-4 rounded-xl flex items-center shadow transition-colors">
-            <span class="text-xl mr-4">📍</span>
-            <span class="font-medium">Directions & Transport</span>
-        </button>
-        <button class="bg-gray-800 hover:bg-gray-700 p-4 rounded-xl flex items-center shadow transition-colors">
-            <span class="text-xl mr-4">➕</span>
-            <span class="font-medium">Medical Advice</span>
-        </button>
-        <button class="bg-gray-800 hover:bg-gray-700 p-4 rounded-xl flex items-center shadow transition-colors">
-            <span class="text-xl mr-4">⚠️</span>
-            <span class="font-medium text-red-400">Emergency Contact</span>
-        </button>
-    </div>
+    <!-- Core Features Section -->
+    <section id="features" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-24 reveal">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">More than a phone box.<br> <span class="text-gray-500">A helping hand.</span></h2>
+        </div>
 
-    <div class="mt-auto pt-8 flex flex-col items-center">
-        <button class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(220,38,38,0.7)] animate-pulse">
-            <span class="text-2xl">🎤</span>
-        </button>
-        <p class="text-xs text-gray-500 mt-4 uppercase tracking-widest">Tap to speak</p>
-    </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <img src="concept2.jpg" alt="Smart Kiosk Interior" class="rounded-2xl shadow-[0_0_50px_rgba(220,38,38,0.15)] border border-gray-800 w-full">
+            </div>
+            
+            <div class="space-y-8 reveal">
+                <div class="glass p-8 rounded-2xl hover:border-red-600/50 transition-colors">
+                    <div class="text-3xl mb-4">🧠</div>
+                    <h3 class="text-2xl font-semibold mb-2">AI City Assistant</h3>
+                    <p class="text-gray-400">Natural language processing allows locals and tourists to ask for directions, medical advice, and weather updates via a touchless interface.</p>
+                </div>
+                
+                <div class="glass p-8 rounded-2xl hover:border-green-500/50 transition-colors">
+                    <div class="text-3xl mb-4">❤️</div>
+                    <h3 class="text-2xl font-semibold mb-2">Lifesaving Equipment</h3>
+                    <p class="text-gray-400">Integrated Class II automated external defibrillator (AED) and emergency fire extinguisher, constantly monitored via IoT sensors.</p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl hover:border-blue-500/50 transition-colors">
+                    <div class="text-3xl mb-4">☀️</div>
+                    <h3 class="text-2xl font-semibold mb-2">Sustainable Power</h3>
+                    <p class="text-gray-400">Discreet rooftop solar panels power the internal LED lighting and emergency systems, ensuring uptime even during grid failures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive UI Demo Section -->
+    <section class="py-32 bg-[#0a0a0a] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16">Interact with the Future.</h2>
+            
+            <!-- Simulated Kiosk Screen -->
+            <div class="mx-auto w-full max-w-sm glass border-[8px] border-black rounded-[2.5rem] h-[750px] relative shadow-2xl flex flex-col p-6 overflow-hidden">
+                <div class="flex justify-between items-center mb-12">
+                    <div class="text-sm font-bold tracking-widest text-red-500">10:24 AM</div>
+                    <div class="text-xs bg-green-500/20 text-green-400 px-3 py-1 rounded-full border border-green-500/30">Secure WiFi</div>
+                </div>
+
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <div class="w-24 h-24 rounded-full bg-gradient-to-br from-red-600 to-purple-600 p-1 mb-2">
+                        <img src="https://ui-avatars.com/api/?name=AI&background=000&color=fff&rounded=true&size=128" alt="AI" class="rounded-full w-full h-full object-cover">
+                    </div>
+                    <h1 class="text-3xl font-bold">Hello</h1>
+                    <p class="text-gray-400">How can I help you today?</p>
+                </div>
+
+                <div class="flex flex-col space-y-4 mt-12 w-full">
+                    <button class="bg-white/5 hover:bg-white/10 border border-white/10 p-5 rounded-2xl flex items-center transition-all group">
+                        <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">📍</span>
+                        <span class="font-medium">Find Directions</span>
+                    </button>
+                    <button class="bg-white/5 hover:bg-white/10 border border-white/10 p-5 rounded-2xl flex items-center transition-all group">
+                        <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">🚑</span>
+                        <span class="font-medium">Medical Assistance</span>
+                    </button>
+                </div>
+
+                <div class="mt-auto pt-8 flex flex-col items-center">
+                    <button class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(220,38,38,0.4)] hover:scale-105 transition-transform">
+                        <span class="text-3xl">🎤</span>
+                    </button>
+                    <p class="text-xs text-gray-500 mt-6 uppercase tracking-widest font-semibold">Tap to speak</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-gray-900 text-center text-gray-600 text-sm">
+        <p>Concept Design and Interface Prototype by Lazar Mladenovic</p>
+        <p class="mt-2 text-xs uppercase tracking-widest">© 2026. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+    </script>
 </body>
 </html>
